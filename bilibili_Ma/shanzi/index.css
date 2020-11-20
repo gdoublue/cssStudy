@@ -1,0 +1,160 @@
+*{
+    margin:0;
+    padding:0;
+}
+ul,ol{
+    list-style:none;
+}
+body{
+    background:url("images/bg.jpg");
+}
+.fan{
+    width:600px;
+    height:300px;
+    border-bottom:2px solid darkcyan;
+    position:fixed;
+    left:50%;
+    top:50%;
+    margin-left:-300px;
+    margin-top:-150px;
+
+}
+
+.fan li{
+    width: 60px;
+    height: 200px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin-left:-30px;
+    margin-top:-80px;
+    background-color: yellow;
+    text-align: center;
+    transform-origin: center bottom;
+    transition: all 1s linear;
+}
+
+
+.fan li:nth-child(1){
+    background:#e04641;
+}
+.fan li:nth-child(2){
+    background:#eb6464;
+}
+.fan li:nth-child(3){
+    background:#ee8d65;
+}
+.fan li:nth-child(4){
+    background:#e7a043;
+}
+.fan li:nth-child(5){
+    background:#eac149;
+}
+.fan li:nth-child(6){
+    background:#f5f259;
+}
+.fan li:nth-child(7){
+    background:#dff685;
+}
+.fan li:nth-child(8){
+    background:#c0f580;
+}
+.fan li:nth-child(9){
+    background:#9be4a4;
+}
+.fan li:nth-child(10){
+    background:#6dd8bb;
+}
+.fan li:nth-child(11){
+    background:#3e92cd;
+}
+.fan li:nth-child(12){
+    background:#3c5e8d;
+}
+.fan li:nth-child(13){
+    background:#623364;
+}
+
+.fan li:nth-child(1){
+    background:#e04641;
+}
+.fan li:nth-child(2){
+    background:#eb6464;
+}
+.fan li:nth-child(3){
+    background:#ee8d65;
+}
+.fan li:nth-child(4){
+    background:#e7a043;
+}
+.fan li:nth-child(5){
+    background:#eac149;
+}
+.fan li:nth-child(6){
+    background:#f5f259;
+}
+.fan li:nth-child(7){
+    background:#dff685;
+}
+.fan li:nth-child(8){
+    background:#c0f580;
+}
+.fan li:nth-child(9){
+    background:#9be4a4;
+}
+.fan li:nth-child(10){
+    background:#6dd8bb;
+}
+.fan li:nth-child(11){
+    background:#3e92cd;
+}
+.fan li:nth-child(12){
+    background:#3c5e8d;
+}
+.fan li:nth-child(13){
+    background:#623364;
+}
+
+.fan:hover li:nth-child(8){
+    transform: rotate(15deg);
+}
+.fan:hover li:nth-child(9){
+    transform: rotate(30deg);
+}
+.fan:hover li:nth-child(10){
+    transform: rotate(45deg);
+}
+.fan:hover li:nth-child(11){
+    transform: rotate(60deg);
+}
+.fan:hover li:nth-child(12){
+    transform: rotate(75deg);
+}
+.fan:hover li:nth-child(13){
+    transform: rotate(90deg);
+}
+
+.fan:hover li:nth-child(6){
+    transform: rotate(-15deg);
+}
+.fan:hover li:nth-child(5){
+    transform: rotate(-30deg);
+}
+.fan:hover li:nth-child(4){
+    transform: rotate(-45deg);
+}
+.fan:hover li:nth-child(3){
+    transform: rotate(-60deg);
+}
+.fan:hover li:nth-child(2){
+    transform: rotate(-75deg);
+}
+.fan:hover li:nth-child(1){
+    transform: rotate(-90deg) ;
+}
+
+.fan li:hover{
+    color: #fff;
+    font-size: larger;
+    transition: .2s;
+}
