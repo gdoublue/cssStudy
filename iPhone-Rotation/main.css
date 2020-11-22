@@ -2,6 +2,9 @@ body{
     margin: 0;
     background-color: #131313;
 }
+body.loaded{
+    height: 4800px;
+}
 
 #sticky{
     position: sticky;
@@ -13,5 +16,55 @@ body{
 
 canvas{
     position: relative;
-    background-color: #fff;
+    margin-top: -100px;
+}
+p.left,p.right,p.top{
+    font-size: 28px;
+    font-family: Helvetica;
+    font-weight: bold;
+    position: absolute;
+    top: 45%;
+    color: #ffff;
+    opacity: 0;
+}
+p.right{
+    right: 50%;
+
+}
+p.left{
+    left: 50%;
+}
+
+p.top{
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    z-index: 20;
+}
+
+#loading{
+    font-size: 28px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: #ffff;
+    position: absolute;
+    width: 50vw;
+    z-index: 10;
+    /*text-align: center;*/
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2002878/iphone-se.01.png") no-repeat center center;
+    background-size: contain;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+    margin-bottom: 0;
+    transition: .5s opacity ease-in-out;
+    transition-delay: 2s;
+}
+#loading p{
+    margin-top: 25.5%;
+}
+body.loaded #loading{
+    opacity: 0;
 }
