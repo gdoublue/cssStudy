@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    background-color: #131313;
+}
+
+#sticky{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas{
+    position: relative;
+    background-color: #fff;
+}
