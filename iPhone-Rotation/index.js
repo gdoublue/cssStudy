@@ -6,12 +6,13 @@ $(function () {
     const context = $iphone[0].getContext('2d')
     const firstimg = $('#first-img')[0]
     var flag = false
-    function init(){
-        firstimg.onload = function(){
-            console.log('first loaded')
-            $('.top').css('opacity',1)
-            context.drawImage(firstimg,0,0,432,976)
-        }
+
+    firstimg.onload = function(){
+        console.log('first loaded')
+        $('.top').css('opacity',1)
+        context.drawImage(firstimg,0,0,432,976)
+    }
+    function init(){ 
         $iphone.height($(window).height())
         for (let i =0; i<85;i++){
             images[i] = loader.addImage(

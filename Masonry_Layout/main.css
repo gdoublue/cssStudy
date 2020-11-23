@@ -1,0 +1,21 @@
+body{
+    margin: 4px;
+
+}
+
+.masonry{
+    column-count: 4;
+    column-gap: 0;
+}
+.item{
+    padding:2px;
+
+}
+.item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.item::after{
+
+}
