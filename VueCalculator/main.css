@@ -7,6 +7,7 @@ body {
 }
 
 .calculator{
+    user-select: auto;
     --button-width: 70px;
     --button-height: 70px;
     display: grid;
@@ -21,6 +22,7 @@ body {
     box-shadow: -8px -8px 16px -10px rgba(255, 255, 255, 1), 8px 8px 16px -10px rgba(0, 0, 0, .15);
     padding: 24px;
     border-radius: 20px;
+    position: relative;
 }
 .calculator button {
     margin: 8px;
@@ -44,32 +46,42 @@ body {
 .result {
     text-align: right;
     line-height: var(--button-height);
-    font-size: 44px;
+    /*height: var(--button-height);*/
+    font-size: 36px;
     font-family: Helvetica;
     padding: 0 14px;
     margin-right: 10px;
     color: #666;
-    /*overflow: hidden;*/
+    overflow: hidden;
     transition: .3s linear;
     position: relative;
+    background-color: #555;
 }
 .result.smaller{
     font-size: 20px;
-    line-height:calc(var(--button-height) / 2);
     word-wrap:break-word;
     text-align: left;
+    line-height:calc(var(--button-height) / 2);
+    text-overflow: ellipsis;
 }
 .time{
     position: absolute;
-    bottom: 0;
-    left: 0;
-
+    top: 2px;
+    left: 4px;
+    font-size: 16px;
+    color: #666;
 }
 .back{
+    height: calc(var(--button-height));
+    width: 24px;
+    border-radius: 8px;
     position: absolute;
-    top: 0px;
-    right: -16px;
-    font-size: 44px;
+    top: 15px;
+    right: -5px;
+    padding:5px;
+    font-size: 14px;
 
 }
-
+.back.active{
+    box-shadow: -4px -4px 4px -3px rgba(255, 255, 255, 1) inset, 4px 1px 4px -4px rgba(0, 0, 0, .3) inset;
+}
