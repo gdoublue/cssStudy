@@ -1,5 +1,4 @@
 var touchinterval = null
-var $vibrate = false
 new Vue({
     el:'#app',
     data: {
@@ -138,9 +137,7 @@ new Vue({
             this.equation = this.equation.slice(0,this.equation.length-1)
         },
         playSound:function (e,append = true) {
-            if($vibrate){
                 navigator.vibrate(50);
-            }
             if(this.isMute) return;
            if(append){
                if(e==='÷') e = 'c'
@@ -175,12 +172,6 @@ new Vue({
     },
     mounted(){
         this.Supdate()
-        setTimeout(()=>{
-            navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
-            if(navigator.vibrate) {   //支持震动
-                $vibrate = true
-            }
-        },1000)
     },
     watch:{
         equation:function (val) {
