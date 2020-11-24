@@ -7,8 +7,8 @@ body {
 }
 
 .calculator{
-    --button-width: 75px;
-    --button-height: 75px;
+    --button-width: 70px;
+    --button-height: 70px;
     display: grid;
     grid-template-areas:"result result result result"
     "ac plus-minus percent divide"
@@ -34,10 +34,42 @@ body {
     font-weight: normal;
     color: #999;
     background: linear-gradient(135deg, rgba(230, 230, 230, 1) 0%, rgba(246, 246, 246, 1) 100%);
-    box-shadow: -4px -4px 10px -8px rgba(255, 255, 255, 1), 4px 4px 10px -8px rgba(0, 0, 0, .3);
+    box-shadow: -4px -4px 10px -8px rgba(255, 255, 255, 1), 4px 4px 10px -8px rgba(0, 0, 0, 0.5);
 }
 
-.calculator button:hover {
+.calculator button:active {
     box-shadow: -4px -4px 10px -8px rgba(255, 255, 255, 1) inset, 4px 4px 10px -8px rgba(0, 0, 0, .3) inset;
+}
+
+.result {
+    text-align: right;
+    line-height: var(--button-height);
+    font-size: 44px;
+    font-family: Helvetica;
+    padding: 0 14px;
+    margin-right: 10px;
+    color: #666;
+    /*overflow: hidden;*/
+    transition: .3s linear;
+    position: relative;
+}
+.result.smaller{
+    font-size: 20px;
+    line-height:calc(var(--button-height) / 2);
+    word-wrap:break-word;
+    text-align: left;
+}
+.time{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+}
+.back{
+    position: absolute;
+    top: 0px;
+    right: -16px;
+    font-size: 44px;
+
 }
 
