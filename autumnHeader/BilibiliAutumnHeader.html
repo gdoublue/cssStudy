@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深秋</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<header>
+    <div><img src="https://assets.codepen.io/2002878/bilibili-autumn-1.png"></div>
+    <div><img src="./images/eye1.png"></div>
+    <div><img src="https://assets.codepen.io/2002878/bilibili-autumn-3.png"></div>
+    <div><img src="https://assets.codepen.io/2002878/bilibili-autumn-4.png"></div>
+    <div><img src="https://assets.codepen.io/2002878/bilibili-autumn-5.png"></div>
+    <div><img src="https://assets.codepen.io/2002878/bilibili-autumn-6.png"></div>
+</header>
+<script>
+    const images = document.querySelectorAll('header >div > img')
+    const header = document.querySelector('header')
+    let timer = null
+    header.addEventListener('mousemove',throttle(function (ev) {
+
+            let percentage= ev.clientX / window.outerWidth
+            let offset = 20*percentage
+            let blur = 20
+            for(let[index,image] of images.entries()){
+                image.style.setProperty('transition', `0s`)
+                let blurValue = (Math.pow((index / images.length - percentage), 2) * blur)
+                if(index >1){
+
+                    image.style.setProperty('--offset', `${offset*index}px`)
+                }
+                image.style.setProperty('--blur', `${blurValue}px`)
+            }
+
+    },40))
+    header.addEventListener('mouseleave',ev => {
+        clearTimeout(timer)
+        timer = null
+        let offset = 3
+        let blur = 20
+        for(let[index,image] of images.entries()){
+            image.style.setProperty('transition', `0.8s`)
+            let blurValue = (Math.pow((index / images.length - 0.3), 2) * blur)
+
+            image.style.setProperty('--offset', `${offset*index}px`)
+
+            image.style.setProperty('--blur', `${blurValue}px`)
+        }
+    })
+
+    function throttle(fn, delay = 100) {
+
+        return function () {
+            if (timer) {
+                return
+            }
+            timer = setTimeout(() => {
+                fn.apply(this, arguments)
+                timer = null
+            }, delay)
+        }
+    }
+    function wink(){
+        let ii = 1
+        let interval = 5000
+        setInterval(function () {
+            images[1].src = './images/eye1.5.png'
+            // setTimeout(()=>{images[1].src = './images/eye1.5.png'},50)
+            setTimeout(()=>{images[1].src = './images/eye2.png'},100)
+            setTimeout(()=>{images[1].src = './images/eye1.png'},250)
+        },interval)
+    }
+    wink()
+
+</script>
+</body>
+</html>
