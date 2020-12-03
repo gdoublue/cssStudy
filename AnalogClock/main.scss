@@ -1,0 +1,84 @@
+*,
+* ::after,
+* ::before {
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(
+    to right,
+                  hsl(168, 100%, 54%),
+                  hsl(165, 100%, 50%)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  .clock{
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 50%;
+    border: 2px solid #fcff62;
+    position: relative;
+    background-image: url(https://i.loli.net/2020/12/03/uzkciHBIUlsKNVy.png) ;
+    background-size:contain;
+    background-repeat: no-repeat;
+    .number{
+      --rotation:0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transform: rotate(var(--rotation));
+      font-size: 1.5rem;
+      color: #282828;
+      padding-top: 5px;
+    }
+    @for $i from 1 through 11 {
+      .number#{$i} { --rotation: #{$i * 30}deg; }
+
+    }
+  .hand{
+    --rotation:50;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  }
+    &::after{
+      content: '';
+      position: absolute;
+      background-color: black;
+      z-index: 11;
+      width: 15px;
+      height: 15px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      opacity: .9;
+    }
+    .second{
+      width: 3px;
+      height: 45%;
+      background-color: red;
+    }
+     .minute {
+      width: 7px;
+      height: 41%;
+      background-color: rgba(40, 40, 40, 0.69);
+    }
+    .hour {
+      width: 10px;
+      height: 35%;
+      background-color: #242424;
+      opacity: 0.8;
+    }
+  }
+}
