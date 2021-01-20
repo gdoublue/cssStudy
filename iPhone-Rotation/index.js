@@ -26,7 +26,7 @@ $(function () {
 
         loader.start()
     }
-
+    
     init()
     function showHideText(el,current,showFrom,showTo,hideFrom,hideTo) {
         if(current<showFrom){
