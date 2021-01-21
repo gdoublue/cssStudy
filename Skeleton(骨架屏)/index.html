@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>skeleton骨架屏</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="card loading">
+      <div class="image">
+        <img src="https://picsum.photos/320/200" alt="图片" />
+      </div>
+      <div class="content">
+        <h4>CodingCssStudy</h4>
+        <div class="description">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+          maxime explicabo et in amet, architecto illum ipsum facere....
+        </div>
+      </div>
+    </div>
+    <div class="card loading">
+      <div class="image">
+        <img src="https://picsum.photos/320/200" alt="图片" />
+      </div>
+      <div class="content">
+        <h4>CodingCssStudy</h4>
+        <div class="description">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+          maxime explicabo et in amet, architecto illum ipsum facere....
+        </div>
+      </div>
+    </div>
+    <div class="card loading">
+      <div class="image">
+        <img src="https://picsum.photos/321/200" alt="图片" />
+      </div>
+      <div class="content">
+        <h4>CodingCssStudy</h4>
+        <div class="description">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+          maxime explicabo et in amet, architecto illum ipsum facere....
+        </div>
+      </div>
+    </div>
+    <div class="card loading">
+      <div class="image">
+        <img src="https://picsum.photos/320/200" alt="图片" />
+      </div>
+      <div class="content">
+        <h4>CodingCssStudy</h4>
+        <div class="description">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+          maxime explicabo et in amet, architecto illum ipsum facere....
+        </div>
+      </div>
+    </div>
+    <div class="card loading" id="cc">
+      <div class="image">
+        <img src="https://picsum.photos/320/200" alt="图片" />
+      </div>
+      <div class="content">
+        <h4>CodingCssStudy</h4>
+        <div class="description">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident
+          maxime explicabo et in amet, architecto illum ipsum facere....
+        </div>
+      </div>
+    </div>
+    <a href="https://www.baidu.com">bbbdd</a>
+    <script>
+      const cards = document.querySelectorAll(".card");
+      cards.forEach((el) => {
+        const img = el.getElementsByTagName("img")[0];
+        console.log(img);
+        img.addEventListener("load", (res) => {
+          console.log(this);
+          el.classList.remove("loading");
+        });
+      });
+    </script>
+  </body>
+</html>
